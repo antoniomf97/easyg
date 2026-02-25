@@ -1,0 +1,87 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/27.0.2 Chrome/134.0.6998.205 Electron/35.3.0 Safari/537.36" version="27.0.2">
+  <diagram id="prtHgNgQTEPvFCAcTncT" name="Page-1">
+    <mxGraphModel dx="475" dy="280" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="KIWDqt17klU8BHcdV1Ts-14" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="190" y="150" width="310" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="KIWDqt17klU8BHcdV1Ts-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;startSize=3;endSize=3;" edge="1" parent="1" source="KIWDqt17klU8BHcdV1Ts-1" target="KIWDqt17klU8BHcdV1Ts-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KIWDqt17klU8BHcdV1Ts-1" value="Client&lt;br&gt;Application" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="280" y="80" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KIWDqt17klU8BHcdV1Ts-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;startSize=3;endSize=3;" edge="1" parent="1" source="KIWDqt17klU8BHcdV1Ts-5" target="KIWDqt17klU8BHcdV1Ts-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KIWDqt17klU8BHcdV1Ts-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A0C4FF;" edge="1" parent="1" source="KIWDqt17klU8BHcdV1Ts-5" target="KIWDqt17klU8BHcdV1Ts-17">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="350" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KIWDqt17klU8BHcdV1Ts-5" value="Gateway&lt;br&gt;Service" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="280" y="140" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KIWDqt17klU8BHcdV1Ts-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;strokeWidth=1;endSize=3;startSize=3;" edge="1" parent="1" source="KIWDqt17klU8BHcdV1Ts-7" target="KIWDqt17klU8BHcdV1Ts-10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="330" y="250" />
+              <mxPoint x="400" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KIWDqt17klU8BHcdV1Ts-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;strokeWidth=1;endSize=3;startSize=3;" edge="1" parent="1" source="KIWDqt17klU8BHcdV1Ts-7" target="KIWDqt17klU8BHcdV1Ts-9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="310" y="250" />
+              <mxPoint x="240" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KIWDqt17klU8BHcdV1Ts-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A0C4FF;" edge="1" parent="1" source="KIWDqt17klU8BHcdV1Ts-7" target="KIWDqt17klU8BHcdV1Ts-17">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="350" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KIWDqt17klU8BHcdV1Ts-7" value="Validation&lt;br&gt;Service" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="280" y="200" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KIWDqt17klU8BHcdV1Ts-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A0C4FF;" edge="1" parent="1" source="KIWDqt17klU8BHcdV1Ts-9" target="KIWDqt17klU8BHcdV1Ts-17">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="270" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KIWDqt17klU8BHcdV1Ts-9" value="Plotter&lt;br&gt;Service" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="200" y="260" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KIWDqt17klU8BHcdV1Ts-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endSize=3;targetPerimeterSpacing=0;startSize=3;" edge="1" parent="1" source="KIWDqt17klU8BHcdV1Ts-10" target="KIWDqt17klU8BHcdV1Ts-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KIWDqt17klU8BHcdV1Ts-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A0C4FF;" edge="1" parent="1" source="KIWDqt17klU8BHcdV1Ts-10" target="KIWDqt17klU8BHcdV1Ts-17">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KIWDqt17klU8BHcdV1Ts-10" value="Fitter&lt;br&gt;Service" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="360" y="260" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KIWDqt17klU8BHcdV1Ts-17" value="Central Logging Service" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;strokeColor=#A0C4FF;fontSize=8;rotation=0;horizontal=0;dashed=1;fontColor=#A0C4FF;" vertex="1" parent="1">
+          <mxGeometry x="470" y="160" width="20" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="KIWDqt17klU8BHcdV1Ts-22" value="Monolith" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;" vertex="1" parent="1">
+          <mxGeometry x="460" y="140" width="40" height="10" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
