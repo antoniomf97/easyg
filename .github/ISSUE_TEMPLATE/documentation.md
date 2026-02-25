@@ -1,6 +1,6 @@
 ---
 name: Documentation
-about: Desceribe what was documented in this issue.
+about: Describe what was documented in this issue.
 title: "[docs]"
 labels: documentation
 assignees: antoniomf97
