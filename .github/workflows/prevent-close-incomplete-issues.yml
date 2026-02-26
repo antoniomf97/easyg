@@ -1,18 +1,39 @@
 name: Prevent Closing Incomplete Issues
+
 on:
   issues:
-    types: [edited, closed]
+    types: [closed]
 
 jobs:
-  prevent_close:
+  check-tasks:
     runs-on: ubuntu-latest
     steps:
-      - name: Check for incomplete tasks
+      - name: Check if all tasks are done
         uses: actions/github-script@v6
         with:
           script: |
-            const issueBody = context.payload.issue.body;
-            const incomplete = issueBody.match(/- \[ \]/g);
-            if (incomplete && context.payload.action === 'closed') {
-              throw new Error('Cannot close issue: tasks are not complete');
+            const issue = context.payload.issue;
+            const body = issue.body || "";
+            const incompleteTasks = body.match(/- \[ \]/g) || [];
+
+            if (incompleteTasks.length > 0) {
+              // Reopen the issue if it was closed
+              await github.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                state: "open"
+              });
+              
+              // Add a comment explaining why
+              await github.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: "⚠️ Cannot close issue: there are incomplete tasks remaining."
+              });
+
+              console.log("Issue reopened because tasks are incomplete.");
+            } else {
+              console.log("All tasks completed. Issue can stay closed.");
             }
