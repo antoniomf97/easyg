@@ -1,35 +1,56 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [input, setInput] = useState("");
+  const [output, setOutput] = useState("");
+
+  const handleSubmit = async () => {
+    try {
+      // Convert comma-separated string to number array
+      const values = input
+        .split(",")
+        .map((v) => parseFloat(v.trim()))
+        .filter((v) => !isNaN(v));
+
+      const response = await fetch("http://127.0.0.1:8000/test", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ values }),
+      });
+
+      const data = await response.json();
+
+      // Show everything as one text block
+      setOutput(JSON.stringify(data, null, 2));
+    } catch (e) {
+      setOutput("Error calling backend");
+    }
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+    <div style={{ padding: 40 }}>
+      <h1>Data Processor</h1>
+
+      <input
+        type="text"
+        placeholder="Enter numbers separated by commas"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        style={{ width: 300, marginRight: 10 }}
+      />
+
+      <button onClick={handleSubmit}>Submit</button>
+
+      <div style={{ marginTop: 20 }}>
         <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+          Mean: {output}
         </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
