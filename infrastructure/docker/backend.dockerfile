@@ -5,13 +5,13 @@ FROM python:3.12-slim
 WORKDIR /app
 
 # Copy only requirements for caching
-COPY backend/requirements.dev.txt .
+COPY requirements.dev.txt .
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.dev.txt
 
 # Copy the entire app folder into the container
-COPY backend/app ./app
+COPY app ./app
 
 # Expose port 8000 for FastAPI
 EXPOSE 8000

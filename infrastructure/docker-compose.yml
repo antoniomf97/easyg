@@ -3,16 +3,16 @@ version: "3.9"
 services:
   backend:
     build:
-      context: ..
-      dockerfile: infrastructure/docker/backend.dockerfile
+      context: ../backend
+      dockerfile: ../infrastructure/docker/backend.dockerfile
     ports:
       - "8000:8000"
     container_name: easyg-server
 
   frontend:
     build:
-      context: ..
-      dockerfile: infrastructure/docker/frontend.dockerfile
+      context: ../frontend
+      dockerfile: ../infrastructure/docker/frontend.dockerfile
     ports:
       - "5173:5173"
     depends_on:
