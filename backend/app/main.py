@@ -1,4 +1,5 @@
 import sys
+
 sys.path.append(".")
 
 import uvicorn
@@ -9,7 +10,6 @@ from fastapi.responses import JSONResponse
 from app.api.routes import router
 from app.core.cors import setup_cors
 from app.core.exceptions import AppException
-
 
 app = FastAPI(title="easyg")
 

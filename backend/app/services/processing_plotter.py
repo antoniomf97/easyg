@@ -1,12 +1,13 @@
 from io import BytesIO
 
-import PIL.Image as Image
 import pandas as pd
 import matplotlib.pyplot as plt
-from fastapi.responses import FileResponse
+import matplotlib
 
 from app.schemas.plotter import Configurations
 from app.core.exceptions import InvalidFileTypeError, FileNotProvided
+
+matplotlib.use("Agg")
 
 
 def get_data(file_path):
@@ -28,11 +29,10 @@ def plot_builder(data, index):
     plt.legend()
 
 
-async def process_plot(file, config = None):
+async def process_plot(file, config=None):
     verify_input(file, config)
 
-    return  graph_builder(file, config)
-
+    return graph_builder(file, config)
 
 
 def graph_builder(file, configs):
@@ -48,11 +48,10 @@ def graph_builder(file, configs):
 
     buffer = BytesIO()
     fig.savefig(buffer, format="png")
+    plt.close(fig)
 
-    image = Image.open(BytesIO(buffer.getvalue()))
-    image.save("app\\tmp.png")
-
-    return FileResponse("app\\tmp.png")
+    buffer.seek(0)
+    return buffer.getvalue()
 
 
 def verify_input(file, config):
