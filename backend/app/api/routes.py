@@ -1,7 +1,7 @@
 from pydantic import Json
 from typing import Optional
 from fastapi import APIRouter, Response
-from fastapi import File, UploadFile
+from fastapi import File, UploadFile, Form
 
 from app.schemas.input import InputData
 from app.schemas.plotter import Configurations
@@ -26,8 +26,8 @@ def process(input_data: InputData):
 )
 async def plot_request(
     file: Optional[UploadFile] = File(None),
-    # configs: Optional[Json[Configurations]] = Form(None),
+    configs: Optional[Json[Configurations]] = Form(None),
 ):
     return Response(
-        content=await process_plot(file), media_type="image/png"  # , configs)
+        content=await process_plot(file, configs), media_type="image/png"  # , configs)
     )

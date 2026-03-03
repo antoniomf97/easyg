@@ -1,6 +1,6 @@
-import sys
+# import sys
 
-sys.path.append(".")
+# sys.path.append(".")
 
 import uvicorn
 from decouple import config
@@ -37,11 +37,11 @@ async def app_exception_handler(request, exc: AppException):
     )
 
 
-def run():
-    host = config("SERVER_HOST")
-    port = config("SERVER_PORT", cast=int)
-    uvicorn.run("main:app", host=host, port=port, reload=True)
+# def run():
+#     host = config("SERVER_HOST")
+#     port = config("SERVER_PORT", cast=int)
+#     uvicorn.run("main:app", host=host, port=port, reload=True)
 
 
-if __name__ == "__main__":
-    run()
+# if __name__ == "__main__":
+#     run()

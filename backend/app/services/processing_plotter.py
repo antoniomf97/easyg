@@ -4,8 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib
 
-from app.schemas.plotter import Configurations
-from app.core.exceptions import InvalidFileTypeError, FileNotProvided
+import app.core.exceptions as e
 
 matplotlib.use("Agg")
 
@@ -29,23 +28,16 @@ def plot_builder(data, index):
     plt.legend()
 
 
-async def process_plot(file, config=None):
-    verify_input(file, config)
-
-    return graph_builder(file, config)
-
-
 def graph_builder(file, configs):
-    fig = plt.figure()
-
-    if not configs:
-        configs = Configurations()
-
+    # get data
     data = get_data(file.file)
 
+    # build image
+    fig = plt.figure()
     frame_builder(configs=configs)
     plot_builder(data=data, index=["y", "z"])
 
+    # store image on buffer
     buffer = BytesIO()
     fig.savefig(buffer, format="png")
     plt.close(fig)
@@ -56,7 +48,16 @@ def graph_builder(file, configs):
 
 def verify_input(file, config):
     if not file:
-        raise FileNotProvided()
+        raise e.FileNotProvided()
 
     if file.content_type not in ["text/plain", "text/csv"]:
-        raise InvalidFileTypeError("File must be .csv or .txt")
+        raise e.InvalidFileTypeError("File must be .csv or .txt")
+
+    if config is None:
+        raise e.ConfigsNotProvided("Configuration file must not be empty")
+
+
+async def process_plot(file, config):
+    verify_input(file, config)
+
+    return graph_builder(file, config)

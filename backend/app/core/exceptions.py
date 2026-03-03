@@ -17,6 +17,11 @@ class FileNotProvided(AppException):
     detail = "File not provided"
 
 
+class ConfigsNotProvided(AppException):
+    status_code = 400
+    detail = "Configurations not provided"
+
+
 # class UserNotFoundError(AppException):
 #     status_code = 404
 #     detail = "User not found"
