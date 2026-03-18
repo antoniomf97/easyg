@@ -31,6 +31,13 @@ def test_verify_input_invalid_type():
         verify_input(file, DummyConfig())
 
 
+def test_verify_input_valid_plain_text():
+    file = DummyFile("text/plain")
+    config = DummyConfig()
+
+    verify_input(file, config)  # should not raise
+
+
 def test_verify_input_no_config():
     file = DummyFile("text/csv")
 
